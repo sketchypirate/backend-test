@@ -7,14 +7,12 @@ class PlanetSerializer(serializers.ModelSerializer):
     """
     Default serializer for the Planet model.
     """
-
     # Display if there are any planets orbiting this one.
     orbitors = serializers.SerializerMethodField('get_orbitors')
 
     def get_orbitors(self, model):
         orbitors = Planet.objects.filter(orbiting=model.name).values_list('name', flat=True).order_by('name')
         return list(orbitors)
-
 
     def validate(self, data):
         """

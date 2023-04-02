@@ -1,5 +1,3 @@
-### SETUP PROCEDURE, ONLY NEEDS TO BE RUN ONCE
-
 # 1. Upgrade pip
 python3 -m pip install --upgrade pip
 
@@ -16,11 +14,14 @@ source virtual/bin/activate
 # Install the requirement files.
 pip3 install -r requirements.txt
 
-# MAKE SURE you deactivate the virtual environment when you are done by running
-deactivate
-
-### ACTIVATION PROCEDURE, you run this to start the virtual environment. 
+# Start the virtual environment. 
 source virtual/bin/activate
+
+# Make migrations
+./mm.bin
 
 # Run server on port 8080.
 ./run.bin
+
+# MAKE SURE you deactivate the virtual environment when you are done by running
+deactivate
