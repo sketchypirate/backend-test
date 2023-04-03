@@ -17,7 +17,7 @@ class PlanetSerializer(serializers.ModelSerializer):
     def validate(self, data):
         """
         Add server-side validation here. Since mass and volume are strings, we could e.g. check
-        that they are numerical and non-negative.
+        that they are numerical and non-negative real numbers.
         """
         orbiting = data.get('orbiting', None)
 

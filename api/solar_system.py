@@ -17,11 +17,10 @@ class PlanetaryAPI(object):
     def get_planets() -> None:
         '''Gets all planets from the Open API and populates them using the populate method.'''
         response = requests.get(PlanetaryAPI.actual_solar_system)
-        status_code = response.status_code
 
         response = response.json()
         
-        bodies:[] = response['bodies']
+        bodies = response['bodies']
 
         for body in bodies:
             if body['vol']:
